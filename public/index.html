@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peer Review — Set up a session</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="page-header">
+    <p class="eyebrow">Peer Review</p>
+    <h1>Set up a session</h1>
+    <p class="sub">Enter the roster, build a rubric, and get a join code students can scan.</p>
+  </header>
+
+  <form id="setup-form" class="panel">
+    <fieldset>
+      <legend>1. Your details</legend>
+      <label for="teacherEmail">Your email</label>
+      <input type="email" id="teacherEmail" placeholder="you@school.edu" required>
+
+      <label for="topic">Presentation topic</label>
+      <input type="text" id="topic" placeholder="e.g. Climate change mitigation strategies" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Students</legend>
+      <p class="hint">Add each student's name. They'll pick their own name when they join, so spell it the way they'd recognize it.</p>
+      <div id="roster-list" class="chip-list"></div>
+      <div class="add-row">
+        <input type="text" id="student-name-input" placeholder="Student name">
+        <button type="button" id="add-student-btn" class="btn-secondary">Add</button>
+      </div>
+      <p class="count" id="roster-count">0 students added</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Rubric</legend>
+      <p class="hint">Each criterion has its own point value. Total possible score is calculated automatically.</p>
+      <div id="rubric-list" class="rubric-list"></div>
+      <div class="add-row rubric-add-row">
+        <input type="text" id="criterion-input" placeholder="Criterion, e.g. Clarity of delivery">
+        <input type="number" id="points-input" placeholder="Points" min="1" max="100">
+        <button type="button" id="add-criterion-btn" class="btn-secondary">Add</button>
+      </div>
+      <p class="count" id="rubric-total">Total: 0 points</p>
+    </fieldset>
+
+    <p class="error" id="form-error" role="alert"></p>
+
+    <button type="submit" class="btn-primary btn-large">Create session</button>
+  </form>
+</div>
+<script src="/shared.js"></script>
+<script src="/setup.js"></script>
+</body>
+</html>

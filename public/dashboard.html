@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Peer Review — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<div class="wrap wide">
+  <header class="page-header">
+    <p class="eyebrow" id="topic-eyebrow">Peer Review</p>
+    <h1 id="topic-heading">Loading…</h1>
+    <p class="sub" id="status-line"></p>
+  </header>
+
+  <div class="session-code-card">
+    <div class="qr-box" id="qr-box"></div>
+    <div class="code-info">
+      <p class="code-label">Join code</p>
+      <p class="code-value" id="code-display">——————</p>
+      <p class="join-url" id="join-url-display"></p>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="num" id="joined-count">0/0</div>
+      <div class="label">Students joined</div>
+    </div>
+    <div class="stat-box">
+      <div class="num" id="submitted-count">0</div>
+      <div class="label">Reviews submitted</div>
+    </div>
+    <div class="stat-box">
+      <div class="num timer" id="timer-display">—</div>
+      <div class="label" id="timer-label">Not started</div>
+    </div>
+  </div>
+
+  <div class="roster-panel">
+    <h2>Roster</h2>
+    <div class="roster-grid" id="roster-grid"></div>
+  </div>
+
+  <p class="error" id="dash-error" role="alert"></p>
+
+  <div class="action-row" id="setup-actions">
+    <label style="flex-basis:100%;">
+      Grading window (minutes)
+      <input type="number" id="duration-input" value="10" min="1" max="60" style="max-width:120px; margin-top:6px;">
+    </label>
+    <button class="btn-primary btn-large" id="start-btn">Start peer review</button>
+  </div>
+
+  <div class="action-row" id="active-actions" style="display:none;">
+    <button class="btn-secondary" id="end-early-btn">End grading now</button>
+  </div>
+
+  <div class="action-row" id="report-actions" style="display:none;">
+    <button class="btn-primary" id="download-report-btn">Download report (PDF)</button>
+    <button class="btn-danger" id="end-session-btn" disabled>End session</button>
+  </div>
+</div>
+
+<script src="/shared.js"></script>
+<script src="/dashboard.js"></script>
+</body>
+</html>

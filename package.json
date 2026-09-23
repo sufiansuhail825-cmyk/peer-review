@@ -1,0 +1,14 @@
+{
+  "name": "peer-review",
+  "version": "1.0.0",
+  "description": "Classroom peer review app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no tests\" && exit 0"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "@netlify/functions": "^3.0.0"
+  },
+  "license": "ISC"
+}

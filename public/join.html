@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Join Peer Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap join-panel">
+  <header class="page-header">
+    <p class="eyebrow">Peer Review</p>
+    <h1>Join a session</h1>
+    <p class="sub">Enter the code your teacher shared, then find your name.</p>
+  </header>
+
+  <form id="join-form" class="panel">
+    <label for="code-input">Session code</label>
+    <input type="text" id="code-input" placeholder="e.g. K7M3QP" maxlength="6" style="text-transform:uppercase; font-family:var(--serif); font-size:20px; letter-spacing:0.08em;" required>
+
+    <div id="name-select-wrap" style="display:none;">
+      <label for="name-select">Your name</label>
+      <select id="name-select"></select>
+    </div>
+
+    <p class="error" id="join-error" role="alert"></p>
+
+    <button type="submit" class="btn-primary btn-large" id="join-btn">Continue</button>
+  </form>
+</div>
+<script src="/shared.js"></script>
+<script src="/join.js"></script>
+</body>
+</html>
